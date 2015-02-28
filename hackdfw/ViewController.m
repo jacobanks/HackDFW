@@ -17,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [[dataManager sharedManager] retrieveDataWithCompletion:^(dataModel *info, NSError *error) {
+        _cityLabel.text = [NSString stringWithFormat:@"%@", info.cityNames];
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning {
