@@ -14,8 +14,6 @@
 
 @interface topItemsTVC : UITableViewController {
     
-    NSArray *topitems;
-
 }
 
 @end
