@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+    NSMutableArray *tagsMutableArray;
+}
+@property (nonatomic, retain) NSMutableArray *tagsMutableArray;
 
 @property (strong, nonatomic) UIWindow *window;
-
 
 @end
 

@@ -34,8 +34,7 @@
     static dispatch_once_t pred;
     static APIManager *_sharedManager = nil;
     
-    #warning need to put URL here
-    dispatch_once(&pred, ^{ _sharedManager = [[self alloc] initWithBaseURL:[NSURL URLWithString:@""]]; });
+    dispatch_once(&pred, ^{ _sharedManager = [[self alloc] initWithBaseURL:[NSURL URLWithString:@"http://postcatcher.in"]]; });
     return _sharedManager;
 }
 

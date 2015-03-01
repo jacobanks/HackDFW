@@ -21,7 +21,7 @@
 
 - (void)retrieveDataWithCompletion:(ResultBlock)completionBlock
 {
-    [_api GET:@"/" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [_api GET:@"/catchers/54f23965db21ee0300004bd7" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *responseDict = responseObject;
         
         dataModel *data = [[dataModel alloc] initWithDictionary:responseDict error:nil];
@@ -35,6 +35,26 @@
             completionBlock(nil, error);
     }];
 }
+
+- (void)postDataWithCompletion:(ResultBlock)completionBlock
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    NSDictionary *parameters;
+    
+    ViewController *controller = [[ViewController alloc] init];
+    
+    controller.dataDictionary = @{@"startDate": @"test", @"endDate": @"test"};
+
+    parameters = controller.dataDictionary;
+    
+    [manager POST:@"http://postcatcher.in/catchers/54f23965db21ee0300004bd7" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
 
 #pragma mark - Initialization
 

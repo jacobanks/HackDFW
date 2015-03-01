@@ -13,10 +13,12 @@
 @end
 
 @implementation AppDelegate
-
+@synthesize tagsMutableArray;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    tagsMutableArray = [[NSMutableArray alloc] init];
+
     return YES;
 }
 

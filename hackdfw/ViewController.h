@@ -10,12 +10,29 @@
 #import "dataModel.h"
 #import "dataManager.h"
 #import "APIManager.h"
+#import <AFNetworking/AFNetworking.h>
+#import <AMTagListView.h>
+#import <AMTagView.h>
+#import "AppDelegate.h"
 
-#define WEAK_SELF __typeof__(self) __weak weakSelf = self;
+@interface ViewController : UIViewController <UITextFieldDelegate, UIAlertViewDelegate> {
+    
+    NSDictionary *dataDictionary;
 
-@interface ViewController : UIViewController
+    NSString *tagsString;
+}
 
-@property (nonatomic, strong) IBOutlet UILabel *cityLabel;
+@property (nonatomic, strong) IBOutlet UITextField *startDate;
+@property (nonatomic, strong) IBOutlet UITextField *endDate;
+@property (nonatomic, strong) IBOutlet UITextField *destination;
+@property (nonatomic, strong) IBOutlet UITextField *tagsTextField;
+
+@property (weak, nonatomic) IBOutlet AMTagListView	*tagListView;
+@property (nonatomic, strong) AMTagView *selection;
+
+@property(nonatomic,retain) NSDictionary *dataDictionary;
+
+- (IBAction)submit:(id)sender;
 
 @end
 

@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "dataModel.h"
+#import "ViewController.h"
 
 typedef void (^ResultBlock)(dataModel *info, NSError *error);
 
-@interface dataManager : NSObject
+@interface dataManager : NSObject 
 
 #pragma mark - Remote
 
 - (void)retrieveDataWithCompletion:(ResultBlock)completionBlock;
+- (void)postDataWithCompletion:(ResultBlock)completionBlock;
 
 #pragma mark - Singleton
 
