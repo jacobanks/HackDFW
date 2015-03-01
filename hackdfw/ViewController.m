@@ -47,22 +47,20 @@
 
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
+- (void)addTag:(id)sender {
     
-    [self.tagListView addTag:textField.text];
+    [self.tagListView addTag:_tagsTextField.text];
     
     AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
     [app.tagsMutableArray addObject:_tagsTextField.text ];
     
     tagsString = [app.tagsMutableArray componentsJoinedByString:@", "];
-
+    
     NSLog(@"tags are: %@", tagsString);
-
+    
     [self.tagsTextField setText:@""];
-
-    return YES;
 }
+
 
 - (void)dateTextField:(id)sender
 {

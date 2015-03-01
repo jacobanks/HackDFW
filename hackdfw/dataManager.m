@@ -21,7 +21,7 @@
 
 - (void)retrieveDataWithCompletion:(ResultBlock)completionBlock
 {
-    [_api GET:@"/catchers/54f23965db21ee0300004bd7" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [_api GET:@"/weather-example.php" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *responseDict = responseObject;
         
         dataModel *data = [[dataModel alloc] initWithDictionary:responseDict error:nil];

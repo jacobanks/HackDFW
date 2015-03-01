@@ -33,6 +33,7 @@
 @property(nonatomic,retain) NSDictionary *dataDictionary;
 
 - (IBAction)submit:(id)sender;
+- (IBAction)addTag:(id)sender;
 
 @end
 
